@@ -17,8 +17,9 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "---------------------------------\nAccount number "+ accNumber +"\nBalance: " + balance +  "\nType: " + type + "\nStatus: " + status+"\n--------------------------------------";
-		
+		return "---------------------------------\nAccount number " + accNumber + "\nBalance: " + balance + "\nType: "
+				+ type + "\nStatus: " + status + "\n--------------------------------------";
+
 	}
 
 	public Account(int accNumber, AccountType type, int balance, AccountStatus status) {
@@ -48,16 +49,16 @@ public class Account {
 			if (goldCounter > 10) {
 				this.balance += 500;
 				goldCounter = 0;
-				Bank.totalMoney+=500;
-				
+				Bank.totalMoney += 500;
+
 			}
 			break;
 		case PLATINUM:
 			if (amount > 100000) {
 				this.balance += 0.01 * amount;
-				int temp=this.balance;
-				Bank.totalMoney+=temp;
-				
+				int temp = (int)(0.01 * amount);
+				Bank.totalMoney += temp;
+
 			}
 			if (balance < 0)
 				platinumCounter++;
@@ -70,7 +71,7 @@ public class Account {
 
 		}
 		this.balance += amount;
-		Bank.totalMoney+=balance;
+		Bank.totalMoney += balance;
 		System.out.println("Deposited " + amount + "$ INTO account");
 	}
 
@@ -89,7 +90,7 @@ public class Account {
 			this.allow = 0;
 			break;
 		case ALLOWED:
-			this.allow=1;
+			this.allow = 1;
 			break;
 		}
 		switch (type) {
@@ -121,7 +122,7 @@ public class Account {
 
 		{
 			this.balance -= amount;
-			Bank.totalMoney-=balance;
+			Bank.totalMoney -= balance;
 			System.out.println("Withdrewed " + amount + "$ OUT OF account");
 		}
 		switch (type) {
